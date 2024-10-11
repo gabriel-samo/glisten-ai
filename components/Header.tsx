@@ -1,9 +1,9 @@
-import WordMark from "@/components/icons/WordMark";
+import NavBar from "@/components/NavBar";
 
 export default function Header() {
   return (
-    <div>
-      <WordMark />
-    </div>
+    <header>
+      <NavBar />
+    </header>
   );
 }
