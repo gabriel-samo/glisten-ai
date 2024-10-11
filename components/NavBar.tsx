@@ -7,7 +7,7 @@ import WordMark from "@/components/svg/WordMark";
 
 export default function NavBar() {
   return (
-    <nav className="p-4 md:p-6" aria-label="Main Navigation">
+    <nav className="px-4 py-1 md:px-6 md:py-2" aria-label="Main Navigation">
       <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">
         <Link href="/">
           <WordMark />

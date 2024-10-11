@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Glisten AI",
+  title: "Glisten.ai",
   description: "Demo project for linear-like styled website",
 };
 

@@ -2,11 +2,12 @@ import Image from "next/image";
 
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
-import StarGrid from "../svg/StarGrid";
+import StarGrid from "@/components/svg/StarGrid";
+import heroImage from "@/public/images/hero-image.png";
 
 export default function Hero() {
   return (
-    <Container className="text-center">
+    <Container className="mt-2 text-center">
       <div className="relative">
         <StarGrid />
         <h1 className="text-balance text-5xl font-medium md:text-7xl">
@@ -22,11 +23,9 @@ export default function Hero() {
         <div className="glass-container mt-16 w-fit">
           <div className="absolute inset-0 -z-10 bg-sky-500/30 blur-2xl filter" />
           <Image
-            src="/images/hero-image.png"
+            src={heroImage}
             alt="The dashboard of Glisten.ai"
             className="h-full w-full rounded-lg"
-            width={2672}
-            height={1604}
           />
         </div>
       </div>
