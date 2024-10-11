@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { links } from "@/utils/links";
 import ButtonLink from "@/components/ButtonLink";
-import WordMark from "@/components/icons/WordMark";
+import WordMark from "@/components/svg/WordMark";
 
 export default function NavBar() {
   return (
