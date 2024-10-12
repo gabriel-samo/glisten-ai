@@ -3,6 +3,7 @@ import BentoBox from "@/components/sections/BentoBox";
 import Showcase from "@/components/sections/Showcase";
 import CaseStudy from "@/components/sections/CaseStudy";
 import Integrations from "@/components/sections/Integrations";
+import CallToAction from "@/components/sections/CallToAction";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Showcase icon="gear" />
       <CaseStudy />
       <Integrations />
+      <CallToAction />
     </>
   );
 }
