@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 
-import NikeCaseStudy from "@/app/case-study/NikeCaseStudy";
 import NikeLogo from "@/public/images/NikeLogoFancy.png";
+import NikeCaseStudy from "@/app/case-study/NikeCaseStudy";
 import PrismicLogo from "@/public/images/PrismicLogoFancy.png";
 
 export type TCaseStudy = {
