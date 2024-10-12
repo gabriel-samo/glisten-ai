@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 import Image from "next/image";
 
@@ -6,7 +7,6 @@ import Container from "@/components/Container";
 import StarBackground from "@/components/svg/StarBackground";
 import StylizedLogoMark from "@/components/svg/StylizedLogoMark";
 import backgroundImage from "@/public/images/integration-background.jpg";
-import clsx from "clsx";
 
 export default function Integrations() {
   return (
@@ -28,7 +28,7 @@ export default function Integrations() {
           impact on your burn rate.
         </p>
         <div className="mt-20 flex flex-col items-center md:flex-row">
-          {icons.map(({ name, Icon }, index) => (
+          {icons.map(({ Icon }, index) => (
             <React.Fragment key={index}>
               {index === Math.floor(icons.length / 2) && (
                 <>

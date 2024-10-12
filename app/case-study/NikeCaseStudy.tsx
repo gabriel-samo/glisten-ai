@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Container from "@/components/Container";
 import DesignerDrawing from "@/public/images/designer-drawing.jpg";
 
 export default function NikeCaseStudy() {
