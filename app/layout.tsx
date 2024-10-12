@@ -11,6 +11,8 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
+export const runtime = "edge";
+
 export const metadata: Metadata = {
   title: "Glisten.ai",
   description: "Demo project for linear-like styled website",
