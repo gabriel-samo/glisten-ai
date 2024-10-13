@@ -1,6 +1,11 @@
+"use client";
 import clsx from "clsx";
+import gsap from "gsap";
 import React from "react";
 import Image from "next/image";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 import { icons } from "@/utils/icons";
 import Container from "@/components/Container";
@@ -9,6 +14,84 @@ import StylizedLogoMark from "@/components/svg/StylizedLogoMark";
 import backgroundImage from "@/public/images/integration-background.jpg";
 
 export default function Integrations() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  gsap.registerPlugin(useGSAP);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  useGSAP(
+    () => {
+      if (prefersReducedMotion) {
+        gsap.set(containerRef.current, { opacity: 0.7 });
+        gsap.set(".pulsing-icon, .signal-line, .pulsing-logo", {
+          opacity: 0.7,
+        });
+        return;
+      }
+
+      const tl = gsap.timeline({
+        repeat: -1,
+        defaults: { ease: "power2.inOut" },
+      });
+
+      tl.to(".pulsing-logo", {
+        keyframes: [
+          {
+            filter: "brightness(2)",
+            opacity: 1,
+            duration: 0.4,
+            ease: "power2.in",
+          },
+          {
+            filter: "brightness(1)",
+            opacity: 0.7,
+            duration: 0.9,
+          },
+        ],
+      });
+
+      tl.to(
+        ".signal-line",
+        {
+          keyframes: [
+            { backgroundPosition: "0% 0%" },
+            {
+              backgroundPosition: "100% 100%",
+              stagger: { from: "center", each: 0.3 },
+              duration: 1,
+            },
+          ],
+        },
+        "-=1.4",
+      );
+
+      tl.to(
+        ".pulsing-icon",
+        {
+          keyframes: [
+            {
+              opacity: 1,
+              stagger: {
+                from: "center",
+                each: 0.3,
+              },
+              duration: 1,
+            },
+            {
+              opacity: 0.4,
+              duration: 1,
+              stagger: {
+                from: "center",
+                each: 0.3,
+              },
+            },
+          ],
+        },
+        "-=2",
+      );
+    },
+    { scope: containerRef },
+  );
+
   return (
     <Container className="relative overflow-hidden">
       <Image
@@ -27,7 +110,10 @@ export default function Integrations() {
           The integrations your team needs to be productive at scale with no
           impact on your burn rate.
         </p>
-        <div className="mt-20 flex flex-col items-center md:flex-row">
+        <div
+          ref={containerRef}
+          className="mt-20 flex flex-col items-center md:flex-row"
+        >
           {icons.map(({ Icon }, index) => (
             <React.Fragment key={index}>
               {index === Math.floor(icons.length / 2) && (
