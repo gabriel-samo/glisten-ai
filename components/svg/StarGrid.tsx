@@ -13,6 +13,13 @@ export default function StarGrid() {
 
   useGSAP(
     () => {
+      if (prefersReducedMotion) {
+        gsap.set(containerRef.current, {
+          opacity: 1,
+        });
+        return;
+      }
+
       gsap.set(".star-grid-item", {
         opacity: 0,
         transformOrigin: "center",
@@ -20,7 +27,7 @@ export default function StarGrid() {
       });
       gsap.set(containerRef.current, { opacity: 1 });
 
-      const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+      const tl = gsap.timeline();
 
       // Entrance animation
       tl.to(".star-grid-item", {
