@@ -51,5 +51,8 @@ export async function generateMetadata({
   return {
     title: `${metaData?.meta_title} Case Study`,
     description: metaData?.meta_description,
+    openGraph: {
+      images: [`@/public/${metaData?.meta_title}LogoFancy.png`],
+    },
   };
 }

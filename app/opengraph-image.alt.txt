@@ -1,0 +1,2 @@
+Glisten.ai - Demo project of a dark modern AI website.
+Slogen: Glisten.ai The Design Assistant of the Future.

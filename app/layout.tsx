@@ -15,7 +15,7 @@ export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Glisten.ai",
-  description: "Demo project for linear-like styled website",
+  description: "Demo project of a dark modern AI website",
 };
 
 export default function RootLayout({
