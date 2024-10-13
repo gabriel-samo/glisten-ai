@@ -5,6 +5,7 @@ import { PiGear, PiArrowsClockwise } from "react-icons/pi";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import showcaseImage from "@/public/images/showcase-image.png";
+import ShowcaseTitleAnimation from "@/components/ShowcaseTitleAnimation";
 
 const icons = {
   gear: <PiGear />,
@@ -20,10 +21,12 @@ export default function Showcase({ icon, variant = "default" }: ShowcaseProps) {
   return (
     <Container className="relative">
       <div className="glow absolute -z-10 aspect-square w-full max-w-xl rounded-full bg-blue-400/20 blur-3xl filter" />
-      <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
-        Your Glisten.
-        <br /> Your workflow.
-      </h2>
+      <ShowcaseTitleAnimation>
+        <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
+          Your Glisten.
+          <br /> Your workflow.
+        </h2>
+      </ShowcaseTitleAnimation>
 
       <div className="mt-16 grid items-center gap-8 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 backdrop-blur-sm lg:grid-cols-3 lg:gap-0 lg:py-12">
         <div className="">
